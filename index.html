@@ -53,6 +53,29 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     <-- End Login -->
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1780186092250726";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        
+        
+        FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+        {
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+}
+        
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -82,9 +105,10 @@
                     <!--<li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>-->
-                    <!--<li>
+                    <<li>
                         <a class="page-scroll" href="#team">Team</a>
-                    </li>-->
+                    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true"></div>
+                    </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
